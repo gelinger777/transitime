@@ -24,6 +24,7 @@ public class GetPositions
     {        
         DefaultApi api=new DefaultApi();
         ApiClient client=new ApiClient();
+	client.addDefaultHeader("content-type", "application/json");
         client.setBasePath(baseUrl);
         client.setUsername(email);
         client.setPassword(password);        
