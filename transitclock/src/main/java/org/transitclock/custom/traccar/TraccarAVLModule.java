@@ -65,7 +65,9 @@ public class TraccarAVLModule extends PollUrlAvlModule {
 	public TraccarAVLModule(String agencyId) throws Throwable {
 		super(agencyId);
 		api = new DefaultApi();
-		ApiClient client = new ApiClient();
+		
+		ApiClient client = new ApiClient();		
+		client.addDefaultHeader("content-type", "application/json");
 		client.setBasePath(traccarBaseUrl.getValue());
 		client.setUsername(traccarEmail.getValue());
 		client.setPassword(traccarPassword.getValue());
