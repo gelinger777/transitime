@@ -113,7 +113,19 @@ public class TraccarBarefootAVLModule extends TraccarAVLModule {
 		}
 		PrintWriter writer = new PrintWriter(client.getOutputStream());
 		BufferedReader reader = new BufferedReader(new InputStreamReader(client.getInputStream()));
-		writer.println(sample.toString());
+       //writer.println(sample.toString());
+	
+		
+		//new barefoot format 
+		
+	        String s = sample.toString();
+
+		s= s+"]";
+		s="["+s;
+
+		writer.println(s);
+		writer.flush();
+		
 		writer.flush();
 
 		String code = reader.readLine();
